@@ -1,12 +1,12 @@
 /*
-奢宠会员  瓜分万元大奖
-11.23 - 11.30
-https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity/2858314?activityId=dzkwdlt20211125A&shareUuid=5acb2e6c8f10487589dae1d8945b60e0
+全球大牌盛典   黑五狂欢购
+11.25 - 12.1
+https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity/2858314?activityId=dzkwdlt20211125A&shareUuid=fe7c806ba1ce4bf09d52bf50df511f98
 
 默认执行脚本。如果需要不执行
 环境变量 NO_RUSH=false
 */
-const $ = new Env("奢宠会员  瓜分万元大奖");
+const $ = new Env("全球大牌盛典   黑五狂欢购");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
@@ -39,7 +39,7 @@ if (process.env.NO_RUSH && process.env.NO_RUSH != "") {
     authorCodeList = await getAuthorCodeList('https://gitee.com/fatelight/code/raw/master/lzdz1_dapai.json')
     if($.getAuthorCodeListerr === false){
         authorCodeList = [
-            '9ab24fa3e2ba4f4aa15ff4f18afa1b51',
+            'fe7c806ba1ce4bf09d52bf50df511f98',
         ]
     }
 
