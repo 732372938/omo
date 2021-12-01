@@ -309,14 +309,14 @@ function bindWithVender(body, venderId) {
                 } else {
                     res = JSON.parse(data)
                     if (res.success) {
-                        if (res.result.giftInfo && res.result.giftInfo.giftList) {
-                            for (const vo of res.result.giftInfo.giftList) {
-                                if (vo.prizeType === 4) {
-                                    $.log(`获得【${vo.quantity}】京豆`)
-                                    $.bean += vo.quantity
-                                }
-                            }
-                        }
+                        // if (res.result.giftInfo && res.result.giftInfo.giftList) {
+                        //     for (const vo of res.result.giftInfo.giftList) {
+                        //         if (vo.prizeType === 4) {
+                        //             $.log(`获得【${vo.quantity}】京豆`)
+                        //             $.bean += vo.quantity
+                        //         }
+                        //     }
+                        // }
                     }
                 }
             } catch (error) {
