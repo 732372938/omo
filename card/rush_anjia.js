@@ -18,14 +18,15 @@ if ($.isNode()) {
     cookiesArr = cookiesArr.filter(item => !!item);
 }
 !(async () => {
+    $.getAuthorCodeListerr = false
     if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-    authorCodeList = await getAuthorCodeList('https://gitee.com/fatelight/dongge/raw/master/dongge/anjia.json')
-    if(authorCodeList === '404: Not Found'){
+    authorCodeList = await getAuthorCodeList('https://gitee.com/fatelight/code/raw/master/anjia.json')
+    if($.getAuthorCodeListerr === false){
         authorCodeList = [
-            '78bd599b003e4e10a5d3f69068ebf257',
+            '6579dde1e3b34091baecb2cd4381786f',
         ]
     }
 
@@ -219,9 +220,11 @@ function getAuthorCodeList(url) {
         $.get(options, async (err, resp, data) => {
             try {
                 if (err) {
-                    $.log(err)
+                    // $.log(err)
+                    $.getAuthorCodeListerr = false
                 } else {
                 if (data) data = JSON.parse(data)
+                    $.getAuthorCodeListerr = true
                 }
             } catch (e) {
                 $.logErr(e, resp)
